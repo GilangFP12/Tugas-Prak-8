@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="bilSatu">Bil 1</label>
+        <input type="number" id="bilSatu"><br><br>
+        <label for="bilDua">Bil 2</label>
+        <input type="number" id="bilDua"><br><br>
+        <select name="op" id="operatorBil">
+            <option value="+">Penjumlahan</option>
+            <option value="-">Pengurangan</option>
+            <option value="*">Perkalian</option>
+            <option value="/">Pembagian</option>
+        </select>
+        <br><br>
+        <button type="button" onclick="myFunction()">Hitung</button>
+    </form>
+    <br>
+    <br>
+    <label for="hasilBil">Hasil </label>
+    <input type="number" id="hasilBil" disabled>
+
+    <script type="text/javascript">
+        function myFunction() {
+            let bilSatu = parseFloat(document.getElementById("bilSatu").value); 
+            let bilDua = parseFloat(document.getElementById("bilDua").value);
+            let operatorBil = document.getElementById("operatorBil").value;
+            let hasilBil=0;
+
+            if(operatorBil=="+"){
+                hasilBil=bilSatu+bilDua;
+            }
+            else if(operatorBil=="-"){
+                hasilBil=bilSatu-bilDua;
+            }
+            else if(operatorBil=="*"){
+                hasilBil=bilSatu*bilDua;
+            }
+            else if(operatorBil=="/"){
+                hasilBil=bilSatu/bilDua;
+            }
+
+            document.getElementById("hasilBil").value=hasilBil;
+
+            console.log("Bil Pertama : ", bilSatu);
+            console.log("Bil Kedua : ", bilDua);
+            console.log("Operator : ", operatorBil);
+            console.log("Hasil : ", hasilBil);
+        }
+    </script>
+</body>
+</html>
